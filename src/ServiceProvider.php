@@ -16,6 +16,8 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
             if ($id) {
                 return '<meta name="id" content="' . $id . '">';
             }
+
+            return null;
         });
     }
 }
