@@ -10,7 +10,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     public function boot(): void
     {
-        Blade::directive('gitTag', function (): ?string {
+        Blade::directive('gitversion', function (): ?string {
             $id = Gitversion::getCommitId();
 
             if ($id) {
@@ -18,10 +18,6 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
             }
 
             return null;
-        });
-
-        Blade::directive('gitId', function (): ?string {
-            return Gitversion::getCommitId();
         });
     }
 }
